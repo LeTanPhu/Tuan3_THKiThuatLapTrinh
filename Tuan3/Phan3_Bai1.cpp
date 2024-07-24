@@ -84,8 +84,26 @@ void XuatCacPTCucDai(int a[][100], int n,int m) {
 		}
 	}
 }
+void SapXepMangATang(int a[][100], int n, int m) {
+	int c=0;
+	while (c<n)
+	{
+		for (int i = 0; i < m - 1; i++) {
+			for (int j = i + 1; j<m; j++) {
+				if (a[c][i]>a[c][j]) {
+					int temp = a[c][i];
+					a[c][i] = a[c][j];
+					a[c][j] = temp;
+				}
+			}
+		}
+		c++;
+	}
+}
+
 int main() { 
 	int a[100][100];
+	int b[100][100];
 	int n,m;
 	printf("\n1.Tao mang 2 chieu va xuat mang 2 chieu\n");
 	TaoM2C(a, n,m);
@@ -100,5 +118,8 @@ int main() {
 	XuatCacPTCucDai(a, n, m);
 	printf("\n6.Xuat dong chi chua so chan");
 	XuatDongChiChuaChan(a, n, m);
+	printf("\n7.Sap xep mang tang theo tung dong\n");
+	SapXepMangATang(a, n, m);
+	XuatM2C(a, n, m);
 	getch();
 }
