@@ -53,6 +53,37 @@ void XuatDongChiChuaChan(int a[][100], int n, int m) {
 		if (dem == m) printf("%d\t", a[i][m]); else printf("\nDong %d khong chua toan so chan", i);
 	}
 }
+void XuatPTCacDuongBien(int a[][100], int n, int m) {
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t", a[i][0]);
+	}
+	printf("\n");
+	for (int i = 0; i < m; i++)
+	{
+		printf("%d\t", a[0][i]);
+	}
+	printf("\n");
+	for (int i = 0; i < m; i++)
+	{
+		printf("%d\t", a[n-1][i]);
+	}
+	printf("\n");
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d\t", a[i][m-1]);
+	}
+}
+void XuatCacPTCucDai(int a[][100], int n,int m) {
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < m; j++) {
+			if (a[i][j]>a[i + 1][j] && a[i][j]>a[i][j + 1] && a[i][j] >a[i - 1][j] && a[i][j] > a[i][j - 1]) {
+				printf("%d\t", a[i][j]);
+			}
+		}
+	}
+}
 int main() { 
 	int a[100][100];
 	int n,m;
@@ -63,7 +94,11 @@ int main() {
 	TinhTongTungDong(a, n,m);
 	printf("\n3.Xuat phan tu lon nhat tren tung cot");
 	XuatPTMaxTungCot(a,n,m);
-	printf("\n4.Xuat dong chi chua so chan");
+	printf("\n4.Xuat cac phan tu thuoc cac duong bien\n");
+	XuatPTCacDuongBien(a, n, m);
+	printf("\n5.Xuat cac so cuc dai\n");
+	XuatCacPTCucDai(a, n, m);
+	printf("\n6.Xuat dong chi chua so chan");
 	XuatDongChiChuaChan(a, n, m);
 	getch();
 }
