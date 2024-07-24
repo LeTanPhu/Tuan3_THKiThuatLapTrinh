@@ -18,5 +18,8 @@
     <ClCompile Include="Phan3_Bai1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Phan3_Bai2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
