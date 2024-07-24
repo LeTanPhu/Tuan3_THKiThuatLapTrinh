@@ -43,7 +43,17 @@ void XuatPTMaxTungCot(int a[][100], int n, int m) {
 		printf("\nPhan tu lon nhat tren cot %d la %d",j,max);
 	}
 }
-int main() {
+void XuatDongChiChuaChan(int a[][100], int n, int m) {
+	for (int i = 0; i < n; i++)
+	{
+		int dem = 0;
+		for (int j = 0; j < m; j++) {
+			if (a[i][j] % 2 == 0)  dem++;
+		}
+		if (dem == m) printf("%d\t", a[i][m]); else printf("\nDong %d khong chua toan so chan", i);
+	}
+}
+int main() { 
 	int a[100][100];
 	int n,m;
 	printf("\n1.Tao mang 2 chieu va xuat mang 2 chieu\n");
@@ -53,5 +63,7 @@ int main() {
 	TinhTongTungDong(a, n,m);
 	printf("\n3.Xuat phan tu lon nhat tren tung cot");
 	XuatPTMaxTungCot(a,n,m);
+	printf("\n4.Xuat dong chi chua so chan");
+	XuatDongChiChuaChan(a, n, m);
 	getch();
 }
